@@ -1,0 +1,32 @@
+{% extends "index.html" %}
+{% block head %}
+<style>
+div.a {
+    position: relative;
+	margin: 70px auto 0;
+    text-align:center;
+    color : white;
+    
+    
+}
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: #2c3e50;
+}
+
+</style>
+
+{% endblock head %}
+
+
+{% block body %}
+<div class ="a">
+
+<h3 > About us ...</h3>
+<p> There is nothing to know </p>
+<form action ="/about/you">
+<button class="btn btn-danger">but</button>
+</form>
+
+
+{% endblock body %}

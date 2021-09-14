@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+
+
+{% block body %}
+{% if liste %}
+
+<hr>
+<ul class ="list-group">
+
+
+
+    {% for items in liste %}
+
+    <div class ="list-group-item"><a href ="/comments/{{items.id}}">{{items.username}} : {{items.title}}</a></div>
+
+    {% endfor %}
+</ul>
+
+{% else %}
+<p style ="color:white;"> ITS ALL EMPTY </p>
+{% endif %}
+
+{% endblock body %}

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block body %}
+
+      {% if session["logged_in"] %}
+      
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/comments">Comments</a>
+      <a href="/register">Register</a>
+      <a href="/logout">Logout</a>
+
+     
+
+
+      
+      <div class="animation start-home"></div>
+    </nav>
+    <br>
+    <br>
+     <div class="x">
+    <h3>WELCOME</h3>
+    <a>to an END</a>
+    
+    </div>
+    <div class="k">
+    <a>{{session["username"]}}</a>
+    </div>
+      
+      {% else %}
+      
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/comments">Comments</a>
+      <a href="/register">Register</a>
+      <a href="/login">Login</a>
+
+     
+
+
+      
+      <div class="animation start-home"></div>
+    </nav>
+    <br>
+    <br>
+     <div class="x">
+    <h3>WELCOME</h3>
+    <a>to an END</a>
+    
+    </div>
+   
+      {% endif %}
+
+<br>
+<marquee class="marq"
+                 bgcolor= #1abc9c
+                 direction="right"
+                 behavior=scroll 
+                 loop="">
+            This ain't a joke
+        </marquee>
+
+<img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6e3c062e-f25c-4cad-8ff6-7cc7e8f925b3/dblmhon-7469a7e6-a631-4756-b307-48c670cc815a.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzZlM2MwNjJlLWYyNWMtNGNhZC04ZmY2LTdjYzdlOGY5MjViM1wvZGJsbWhvbi03NDY5YTdlNi1hNjMxLTQ3NTYtYjMwNy00OGM2NzBjYzgxNWEuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.7ES4pZGfQ80qeVbD1B5SV_lFM_tspld_WH-_px0r-3c" length ="300" width ="300" style = "border: #1abc9c 2px solid;"/>
+{% endblock body %}

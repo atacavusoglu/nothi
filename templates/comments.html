@@ -1,0 +1,84 @@
+{% extends "index.html" %}
+
+{% block head %}
+<style>
+
+body {
+    text-align:center;
+    background : #97cfaf
+}
+
+
+</style>
+{% endblock head %}
+
+
+{% block body %}
+
+
+{% if session["logged_in"] %}
+{% from "includes/formhelpers.html" import render_field %}
+
+<form method =post>
+ <dl>
+ {{render_field(form.title)}}
+ {{render_field(form.content)}}
+
+
+ <button type="submit" class="btn btn-success">Add</button>
+ </dl>
+ </form>
+ <form action ="/">
+ <button type="submit" class="btn btn-primary">Go to Home</button>
+ </form>
+
+<p> It will be shown as {{session["username"]}}
+
+<h3> Recent Comments</h3>
+<form action ="/search" method = "post">
+
+<input type="text" name ="keyword" class="input-sm" maxlength="64" placeholder="Ara">
+<button type="submit" class="btn btn-danger ">Ara</button>
+
+</form>
+
+
+{% if any_comment %}
+
+</form>
+
+<table class="table table-success table-striped">
+ 
+    <tr>
+      <th scope="col">User</th>
+      <th scope="col">Title</th>
+      <th scope="col">Comments</th>
+   
+    </tr>
+  
+  {% for comment in  any_comment %}
+  <tr>
+  <td>{{comment.username}}</td>
+  <td>{{comment.title}}</td>
+  <td>{{comment.content}}</td>
+  </tr>
+  
+
+
+{% endfor %}
+
+{% else %}
+{% endif %}
+  </table>
+
+
+
+
+
+
+{% else %}
+
+<p> You need to sign in to see these</p>
+{% endif %}
+
+{% endblock body %}

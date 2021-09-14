@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block head %}
+
+<style>
+
+body {
+
+    background : #97cfaf;
+    text-align:center;
+}
+
+
+</style>
+
+
+{% endblock head %}
+
+{% block body %}
+
+{% for içerik in comment %}
+
+<h4>Title :{{içerik.title}}</h4>
+<hr>
+User : {{içerik.username}}
+<br>
+<hr>
+Comment : 
+<p>{{içerik.content}}</p>
+
+{% endfor %}
+
+{% endblock body %}
